@@ -1,0 +1,5 @@
+interface:
+  display_name: "专业投机决策系统"
+  short_description: "以价格结构、趋势反转、失效位和风险收益判断公开证券交易是否值得做"
+policy:
+  allow_implicit_invocation: true
