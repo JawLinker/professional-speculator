@@ -1,0 +1,10 @@
+{
+  "schema_version": "professional-speculator.defaults.v1",
+  "trend": {"primary_timeframe": "weekly", "trade_timeframe": "daily", "pivot_confirmation_bars": 2, "break_confirmation_closes": 1, "break_buffer_pct": 0.0, "two_b_window_bars": 5, "two_b_confirmation_closes": 1},
+  "rr": {"rating_upper_bounds": [1.0, 1.5, 2.0, 3.0], "ratings": ["Very Poor", "Poor", "Acceptable", "Good", "Excellent"], "new_setup_veto_below": 1.0, "buy_setup_minimum": 2.0, "cost_per_unit_default": 0.0},
+  "score": {
+    "weights": {"trend_structure": 20, "trade_location": 15, "risk_reward": 20, "macro_alignment": 10, "fundamental_alignment": 15, "catalyst": 5, "risk_clarity": 10, "psychological_discipline": 5},
+    "grades_minimum": {"A+": 95, "A": 90, "A-": 85, "B+": 80, "B": 75, "B-": 70, "C": 50, "D": 0},
+    "strong_setup_minimum": "A", "setup_minimum": "B+", "missing_core_grade_cap": "C", "missing_confirmation_grade_cap": "B+", "unassessed_psychology_grade_cap": "A-"
+  }
+}
