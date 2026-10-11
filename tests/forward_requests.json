@@ -1,0 +1,52 @@
+{
+  "source_posture": "All securities and market facts below are synthetic test inputs, not live market data. Never browse or execute trades.",
+  "common_packet": {
+    "security": "SYNTH.A Alpha",
+    "exchange": "Synthetic equity venue",
+    "currency": "test units",
+    "as_of": "2026-09-30 16:00 Asia/Shanghai",
+    "horizon": "daily setup within weekly trend, several weeks",
+    "direction": "long",
+    "position_status": "no position",
+    "market_and_sector": "Provided weekly benchmark/sector highs and lows both rise; risk assets/breadth/liquidity agree; volatility normal, confidence High.",
+    "confirmed_daily_swings": [
+      {"date": "09-01", "kind": "low", "price": 90, "confirmed_at": "09-03"},
+      {"date": "09-05", "kind": "high", "price": 97, "confirmed_at": "09-09"},
+      {"date": "09-10", "kind": "low", "price": 95, "confirmed_at": "09-14"},
+      {"date": "09-17", "kind": "high", "price": 99, "confirmed_at": "09-21"}
+    ],
+    "trendline": "Preselected prior 07-10 confirmed low85 and 09-10 confirmed low95; full subsequent daily data supplied in scenario confirms no effective trendline close breach before as_of. Specific dated structure_event/two_b_data supersedes conflicting baseline history, preserving a conflict note.",
+    "current_price": 100,
+    "entry_zone": [99.5, 100],
+    "entry_trigger": "Daily retest support97-98 holds, then one completed daily close >=100; wait for a subsequent retest into99.5-100, only activate at actual fill within that zone after updated RR/risk checks. Price>101 prohibits chase.",
+    "support": [97, 98],
+    "stop": 95,
+    "invalidation_reason": "Confirmed key HL95 invalidated if executable intraday price<95; attempt stop execution, no guaranteed fill",
+    "targets": [111, 120],
+    "target_basis": "111 first preverified higher-timeframe resistance, 120 secondary; no nearer obstacle in provided evidence",
+    "cost_per_unit": 0.1,
+    "fundamentals": "Provided fact pack: improving orders/cashflow, conservative leverage, Strong Positive alignment; thesis fails if recurring orders decline structurally. Confirmed upcoming product milestone in 4 weeks; no near earnings/event gap uncertainty.",
+    "macro_policy_liquidity": "Positive/Positive/Positive with supplied source pack: policy improves sector orders and financing; no contradiction",
+    "risk_result": "Risk-owner supplied conditional screen: adequate liquidity, permitted direction/lot, budget handles stop and quantified gaps; binding constraint loss budget. Account quantities not requested. Trigger still pending.",
+    "user_discipline": "I am not chasing or recouping losses; I will observe the planned risk budget and invalidation regardless of cost basis."
+  },
+  "requests": [
+    {"id": "C01", "request": "按专业投机原理判断这笔候选是否值得做。", "changes": {}},
+    {"id": "C02", "request": "公司很好又在上涨，现在能不能买？", "changes": {"current_price": 100, "entry_zone": [100, 100], "support": [88, 89], "stop": 90, "targets": [108], "target_basis": "108 first verified resistance", "cost_per_unit": 0, "invalidation_reason": "90 last major weekly HL; no tighter valid structural stop"}},
+    {"id": "C03", "request": "我有多头，这段走势出来后还应该持有吗？", "changes": {"position_status": "existing long", "current_price": 92, "structure_event": "Same daily event: preselected trendline at98 breached with close96 on09-22; rebound high101 on09-24 confirmed09-28 failed prior105; reaction low94 formed09-23 before rebound, close92 on09-30 broke94 after rebound confirmation. Stored position rule: exit if this 1-2-3 completes."}},
+    {"id": "C04", "request": "这是否已经确认反转？", "changes": {"current_price": 96, "structure_event": "Same daily event: trendline at98 breached close96 on09-22; rebound101 on09-24 confirmed09-28 failed105; reaction low94 on09-23 remains unbroken, latestclose96."}},
+    {"id": "C05", "request": "基本面这么好，现在是不是买点？", "changes": {"current_price": 96, "structure_event": "Prior bullish structure under pressure: trendline at98 breached close96; rebound101 confirmed but failed105; low94 remains unbroken. Weekly primary stillBull, daily condition weak."}},
+    {"id": "C06", "request": "技术很好就能做吗？", "changes": {"stop": null, "invalidation_reason": "Full price packet checked; proposed instrument trade horizon has no defensible structural or quantified invalidation. Only reason: hope price rises."}},
+    {"id": "C07", "request": "按照专业投机原理分析这只股票现在能不能买。", "replace_packet": {"security": "SYNTH.A Alpha", "position_status": "no position", "price": "unknown", "data": "No verifiable quote/OHLC/swings/financials available; do not fetch external data."}},
+    {"id": "C08", "request": "跌破我原先的止损了，但成本120，回本才卖。", "changes": {"position_status": "existing long", "current_price": 92, "stored_rule": "exit intraday if below confirmed HL95; verified current executable quote92, execution permitted", "user_discipline": "I refuse to sell below cost120 even though my stored95 invalidation is broken; I need to break even."}},
+    {"id": "C09", "request": "A股封板附近要不要追进去？", "changes": {"exchange": "Synthetic A-share scenario", "current_price": 110, "entry_zone": [99.5, 100], "targets": [130], "target_basis": "130 verified resistance, no closer obstacle", "risk_result": "Supplied current instrument rules and book: price near applicable upper limit; executable entry/fill cannot be established within allowed zone; same-day exit restricted; do not assume fill."}},
+    {"id": "C10", "request": "马上财报了，结构这么好能不能建仓？", "changes": {"event": "Official supplied test issuer notice: earnings after next session, plausible large gap but magnitude cannot be estimated; budget has no quantified gap scenario."}},
+    {"id": "C11", "request": "我要赚回昨天亏损，今天重仓冲进去。", "changes": {"user_discipline": "I must recover yesterday's loss today; size does not matter and I fear missing this move."}},
+    {"id": "C12", "request": "这三个事件够不够1-2-3确认？", "changes": {"current_price": 96, "structure_event": "Trendline broke09-22; reaction low94 broke with close92 on09-23; rebound failed101 confirmed09-28; since rebound confirmation price stayed96 and did not break94 again. Same daily timeframe."}},
+    {"id": "C13", "request": "是不是出现了2B？", "changes": {"two_b_data": "Previous confirmed high105; effective high106 on09-22; following completed session09-23 close104, tick0.01; window5bars; no later reclaim of106; no completed 1-2-3 event."}},
+    {"id": "C14", "request": "碰到前高就跌，是不是2B？", "changes": {"two_b_data": "Prior high105; later maximum104.99 and subsequentclose104; tick0.01; full OHLC proves no penetration beyond105."}},
+    {"id": "C15", "request": "短线做空候选怎么判断？", "replace_packet": {"security": "SYNTH.S", "exchange": "Synthetic equity venue", "currency": "test units", "direction": "short", "position_status": "no position", "as_of": "2026-09-30 16:00 Asia/Shanghai", "data_posture": "Synthetic complete source packet", "trend": "Weekly and daily LH/LL verified, broad regime Risk-Off, no bullish reversal; meaningful highs110 then104, lows100 then90; anchored falling line intact", "entry": 100, "entry_zone": [99.5,100], "stop": 104, "target": 90, "cost_per_unit": 0.1, "basis": "104 confirmed LH,90 first prior low; trigger next completed daily close<100 then enter only within99.5-100 after updated RR/risk; no chase below99; intraday executable price>104 invalidates, stop fill not guaranteed", "confirmation": "Negative fundamentals support short; macro agrees; dated catalyst supports; known low emotion risk label without raw user statements", "execution": "Verified borrow/locate/carry/crowding/ADV and exit capacity, liquidity/rules permitted; conditional scenario budget quantified, no absolute loss cap claimed; full risk-owner input."}},
+    {"id": "C16", "request": "第一目标近，第二目标远，赔率算好不好？", "changes": {"current_price": 104, "entry_zone": [104, 104], "targets": [110, 125], "target_basis": "110 first resistance;125 far secondary; no tranche allocation specified", "cost_per_unit": 0}},
+    {"id": "C17", "request": "这个空头好赔率，但任何情况下都不能超过我的绝对亏损上限，普通止损就够了吗？", "replace_packet": {"security": "SYNTH.S", "exchange": "Synthetic equity venue", "currency": "test units", "as_of": "2026-09-30 16:00 Asia/Shanghai", "direction": "short", "position_status": "no position", "trend": "Verified weekly/daily LH/LL, falling line intact, Risk-Off, no opposing confirmed reversal", "entry": 100, "entry_zone": [99.5,100], "stop": 104, "target": 90, "cost_per_unit": 0.1, "basis": "104 confirmed LH,90 first prior low; trigger close<100 then valid zone; >104 intraday invalidation; no chase<99", "confirmation": "Fundamentals/macro/catalyst support short, adequate user discipline statements", "execution": "Borrow/ADV/liquidity/permission verified. User explicitly requires absolute loss cap; no priced defined-loss protection available, only ordinary stop-loss. No existing position."}}
+  ]
+}
